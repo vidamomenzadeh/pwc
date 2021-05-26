@@ -1,0 +1,44 @@
+<% include partials/header.ejs %>
+<div class="main-trial  main-steps">
+    <div class="images-wrapper">
+        <div class="focus-img-wrapper">
+            <div class="focus-item-image"></div>
+        </div>
+    </div>
+    <div class="buttons-wrapper">
+        <div data-val="yes">Yes</div>
+        <div data-val="no" class="button-no">No</div>
+    </div>
+</div>
+<div class="main-pause main-steps">
+    <img src="/assets/focus.png" />
+</div>
+<div class="main-code main-steps">
+   <div>Please enter your code</div>
+   <input type="text" id="user-code"/>
+   <div class="btn-submit">Submit</div>
+</div>
+<div class="main-description main-steps">
+    <img class="focus-icon" src="/assets/fast_icon.png" />
+    <p>Welcome to the focus game</p>
+    <p>
+        You need to determine whether or not there is a red square in the shapes that appear on the screen.
+    </p>
+    <p>Press YES if there is. Press NO if there isn't.</p>
+    <img src="/assets/intro.png" />
+    <p>You need to play as quickly and accurately as possible.
+    </p>
+    <p>Please press the start button to begin the game.</p>
+    <div class="btn-start">Start</div>
+ </div>
+<div class="main-target main-steps">
+    <div class="target">
+        Your Target is:
+        <div class="focus-img-wrapper">
+            <div class="focus-item-image"></div>
+            <div class="border-image-box"></div>
+        </div>
+    </div>
+</div>
+
+<% include partials/footer.ejs %>
