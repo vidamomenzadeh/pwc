@@ -1820,7 +1820,7 @@ class FocusGame {
     $.ajax({
       type: "POST",
       url: '/game/add',
-      "Content-Type": "application/json",
+      "Content-Type": "application/json;charset=utf-8",
       data: {accuracy, responseTime, userCode: userCode, resultsTrials: JSON.stringify(resultsTrials)},
       success: function (response) {
         console.log('sdafdsd')
@@ -1861,18 +1861,19 @@ class FocusGame {
       let responseTime = 0
       let accuracy = 0
       let resultsTrials = []
+      let currentResponseTime
 
       for (var i = 0; i < imagesDetails.length; i++) {
         let trialDetail = this.results[i];
 
         if (trialDetail.correct != undefined) {
-            let currentResponseTime = trialDetail.endTime ? (trialDetail.endTime.getTime() - trialDetail.startTime.getTime()) : 0;
+            currentResponseTime = trialDetail.endTime ? (trialDetail.endTime.getTime() - trialDetail.startTime.getTime()) : 0;
             responseTime += currentResponseTime;
             accuracy += trialDetail.correct;
         }
         resultsTrials[i] = {
-          accuracy,
-          responseTime,
+          accuracy: trialDetail.correct,
+          responseTime : currentResponseTime,
           index: i
         }
     }
