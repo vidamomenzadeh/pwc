@@ -17,7 +17,7 @@ const db = mysql.createConnection ({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'pwd'
+    database: 'pwc'
 });
 
 // connect to database

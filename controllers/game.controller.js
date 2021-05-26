@@ -6,17 +6,11 @@ exports.saveResult = (req, res) => {
     let userCode = req.body.userCode;
     let resultsTrials = req.body.resultsTrials;
 
-    let query = `INSERT INTO results(response, accuracy, userCode, resultsTrials) VALUES (${responseTime}, ${accuracy}, ${userCode}, ${resultsTrials});`
+    let query = `INSERT INTO results(response, accuracy, userCode, resultsTrials) VALUES (${responseTime}, ${accuracy}, "${userCode}", "${resultsTrials}");`
 
     db.query(query, (err, result) => {
         if (err) {
             return res.status(500).send(err);
         }
-
-        res.render('edit-player.ejs', {
-            title: "Edit  Player",
-            player: result[0],
-            message: ''
-        });
     });
 }

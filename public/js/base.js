@@ -1815,12 +1815,13 @@ class FocusGame {
   }
 
   sendResult = (accuracy, responseTime, resultsTrials) => {
-    const userCode = $('#user-code').val()
+    const userCode = $('#user-code').val() || ''
 
     $.ajax({
       type: "POST",
       url: '/game/add',
-      data: {accuracy, responseTime, userCode: userCode, resultsTrials},
+      "Content-Type": "application/json",
+      data: {accuracy, responseTime, userCode: userCode, resultsTrials: JSON.stringify(resultsTrials)},
       success: function (response) {
         console.log('sdafdsd')
      },
@@ -1878,6 +1879,7 @@ class FocusGame {
 
     accuracy = imagesDetails.length > 0 ? parseFloat((accuracy / imagesDetails.length * 100).toFixed(2)) : 0;
     responseTime = imagesDetails.length > 0 ? parseFloat((responseTime / imagesDetails.length).toFixed(2)) : 0;
+
     this.sendResult(accuracy, responseTime, resultsTrials)
   }
 
