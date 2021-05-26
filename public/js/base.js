@@ -44,7 +44,7 @@ const imagesDetails = [
       }
     ]
   },
- /* {
+ {
     answer: false,
     trials: [
       {
@@ -1798,7 +1798,7 @@ const imagesDetails = [
         name: 'square_blue'
       }
     ]
-  }*/
+  }
 
 ]
 
@@ -1829,6 +1829,8 @@ class FocusGame {
         console.log(textStatus, errorThrown);
      }
     });
+
+    this.showThanks()
   }
 
   showTarget = () => {
@@ -1842,6 +1844,11 @@ class FocusGame {
   showDescription = () => {
     $('.main-steps').hide()
     $('.main-description').show()
+  }
+
+  showThanks = () =>{
+    $('.main-steps').hide()
+    $('.main-Thanks').show()
   }
 
   goToNextTrial = () => {
