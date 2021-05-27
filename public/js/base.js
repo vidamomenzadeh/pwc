@@ -1812,6 +1812,15 @@ class FocusGame {
     $( ".btn-submit" ).on( "click", this.showDescription);
     $( ".btn-start" ).on( "click", this.showTarget);
     $('.buttons-wrapper div').on( "click", this.saveResult);
+    $('#user-code').on( "keyup", this.changeCode);
+  }
+
+  changeCode = (e) => {
+    $('.btn-submit').attr('disabled', true)
+
+    if(e.target.value != ''){
+      $('.btn-submit').attr('disabled', false)
+    }
   }
 
   sendResult = (accuracy, responseTime, resultsTrials) => {
@@ -1850,6 +1859,7 @@ class FocusGame {
     $('.main-steps').hide()
     $('.main-Thanks').show()
   }
+
 
   goToNextTrial = () => {
     clearTimeout(window.pausetimeout)

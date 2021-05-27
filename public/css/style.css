@@ -62,16 +62,26 @@
 }
 
 .btn-start,.btn-submit{
-  position: absolute;
-  bottom: 100px;
   width: 200px;
   padding: 10px;
   color: #fff;
   border-radius: 50px;
   text-align: center;
-  left: calc(50% - 100px);
   background-color: #3171e0;
   cursor: pointer;
+  margin: 20px auto;
+  display: block;
+  border: 0px;
+}
+
+.btn-submit:disabled{
+  width: 200px;
+  padding: 10px;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  background-color: #ccc;
+  display: block;
 }
 
 .main-pause img{
@@ -100,11 +110,11 @@
 .main-code{
   color: #fff;
   text-align: center;
-
+  display: block;
+  margin-top: 170px;
 }
 
 .main-description{
-  display: block;
   color: #fff;
   text-align: center;
 }
@@ -121,6 +131,7 @@
 .main-description img{
   width: 30%;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .main-Thanks{
@@ -140,6 +151,7 @@
   border-radius: 5px;
   width: 50%;
   margin-top: 30px;
+
 }
 
 .main-target .focus-img-wrapper{
