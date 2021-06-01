@@ -74,6 +74,16 @@
   border: 0px;
 }
 
+.help-txt-score{
+  font-size: 20px;
+  width: 70%;
+  margin: auto;
+}
+
+.help-txt-score span{
+  font-weight: bold;
+}
+
 .btn-submit:disabled{
   width: 200px;
   padding: 10px;
